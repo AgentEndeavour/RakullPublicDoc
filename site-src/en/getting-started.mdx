@@ -27,7 +27,7 @@ On the welcome screen tap **Login**, check “**I have read and agree to the Pri
 - **Continue with Google**
 - **Continue with GitHub**
 - **Continue with WeChat** (only shown where the server has WeChat enabled)
-- **Sign in with a passkey** (web version only — see “Passkeys” below)
+- **Sign in with a passkey** (web / Android / Windows — see “Passkeys” below)
 - Or tap **Continue without login** to browse as a guest (see “Browse without an account” below)
 
 The login screen has **no invite-code field** and signing in does not require an invite code. After choosing your account on the authorization page you land on the main screen. The app **remembers your session**, so next time you open it you skip the login screen. You can **log out** from the account menu in the top-right corner.
@@ -77,12 +77,12 @@ To keep you from locking yourself out, the app **does not let you unlink your la
 
 ## Passkeys
 
-A passkey is a **passwordless** sign-in method: on the web version you can sign in with your device's **fingerprint, face scan, or security key**, with no third-party authorization step.
+A passkey is a **passwordless** sign-in method: on supported devices you can sign in with your **fingerprint, face scan, or security key** (such as Windows Hello), with no third-party authorization step.
 
-The rules:
+Rules:
 
 - **Sign-in only — passkeys cannot register a new account.** A passkey only resolves to an account that **already exists**.
-- **Web version only** (the entry is not shown in the mobile / desktop apps).
+- **Available on the web, the Android app, and the Windows app**; the entry is hidden in the native iOS / macOS apps (passkeys still work there when you open Raku in a browser).
 - Before first use, **sign in once with Google or GitHub**, then register a passkey under **Account settings → Passkeys**.
 - In Account settings you can **name / rename** passkeys, register more than one, and **delete** ones you no longer use.
 - If a passkey matches no known account, you are told to sign in with Google or GitHub first.
