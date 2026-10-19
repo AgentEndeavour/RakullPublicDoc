@@ -1,6 +1,6 @@
 ---
 title: "Get started"
-description: "Log in, register, or enter Raku as a guest, and switch the interface language."
+description: "Log in, register, or enter Raku as a guest; manage linked sign-in methods and passkeys, and switch the interface language."
 ---
 
 Raku is an **immersive Japanese reading platform**. Upload an article or a video and the app automatically splits it into sentences, translates it, and generates grammar explanations and audio narration. You read sentence by sentence in the reader and save sentences and words as reviewable cards.
@@ -9,45 +9,87 @@ This guide only covers **how to use the app's interface**; it does not cover ins
 
 ## First launch
 
-When you open the app you see a welcome screen with the app name **Raku Learning Language** in the middle. Click **Login** to continue.
+When you open the app you see a welcome screen with the app name **Raku Learning Language** in the middle and two buttons below it:
 
-<Frame caption="Welcome screen: click “Login” to continue">
+- **Login** — you already have an account.
+- **Register** — you are new and need an invite code to create an account.
+
+<Frame caption="Welcome screen: choose “Login” or “Register”">
   <img src="/images/user-guide/01-welcome.png" alt="Raku welcome screen" />
 </Frame>
 
-## Log in
+Raku has **no username or password**: you always sign in with a third-party account or a passkey, so there is no extra password to remember.
 
-For an existing account, check “**I have read and agree to the Privacy Policy**” on the login screen, then choose “**Continue with Google**” or “**Continue with GitHub**” and select your account on the authorization page. Click “Privacy Policy” to read the full policy.
+## Sign in
 
-The login screen has no invite-code field and signing in does not require an invite code. After logging in you land on the main screen. The app **remembers your session**, so next time you open it you skip the login screen. You can **log out** from the account menu in the top-right corner.
+On the welcome screen tap **Login**, check “**I have read and agree to the Privacy Policy**”, then pick a sign-in method:
+
+- **Continue with Google**
+- **Continue with GitHub**
+- **Continue with WeChat** (only shown where the server has WeChat enabled)
+- **Sign in with a passkey** (web version only — see “Passkeys” below)
+- Or tap **Continue without login** to browse as a guest (see “Browse without an account” below)
+
+The login screen has **no invite-code field** and signing in does not require an invite code. After choosing your account on the authorization page you land on the main screen. The app **remembers your session**, so next time you open it you skip the login screen. You can **log out** from the account menu in the top-right corner.
+
+<Note>
+  If the third-party account you picked is **not registered yet**, you first see “**This account is not registered yet.**” Tap “**No account? Create one**”, enter a valid invite code, and finish registration **without another authorization redirect**. Do not use a sign-in method already tied to another account to register a new account — see the binding rules below.
+</Note>
 
 ## Register a new account
 
-Click “**No account? Create one**” on the login screen to open registration:
+New users join **by invitation** and need a valid **invite code** (ask an administrator or a user who has a personal invite code). On the welcome screen tap **Register**:
 
 <Steps>
   <Step title="Enter an invite code">
-    Enter a valid **invite code**, available from an administrator or a user with a personal invite code. Invite codes are only entered during registration.
+    Type a valid invite code into the “Invite code” field. Invite codes are only entered during registration.
   </Step>
   <Step title="Agree to the privacy policy">
-    Check “**I have read and agree to the Privacy Policy**”.
+    Check “**I have read and agree to the Privacy Policy**”; tap “Privacy Policy” to read the full text.
   </Step>
-  <Step title="Choose a registration provider">
-    Click “**Register with Google**” or “**Register with GitHub**” and complete authorization with your provider account.
+  <Step title="Choose a provider and authorize">
+    Tap “**Register with Google**” or “**Register with GitHub**” (and “**Register with WeChat**” where enabled), then complete authorization with that account.
   </Step>
 </Steps>
 
-A valid invite code completes registration immediately and opens the main screen. An invalid code shows an error on the registration screen; correct it and click “**Register**” to retry using the same authorization.
+With a valid invite code the account is **created and activated immediately** and you go straight to the main screen — there is no manual approval wait. An invalid or disabled code shows an error on the page; correct it and retry. Tap “**Have an account? Sign in**” at the bottom to return to login.
+
+## How sign-in methods bind to accounts
+
+One Raku account can be linked to **several** sign-in methods (one each of Google, GitHub and WeChat), but note:
 
 <Note>
-  If an unregistered account completes authorization through the login entry, it first sees “**This account is not registered yet.**”. Click “**No account? Create one**”, enter an invite code, agree to the privacy policy, and click “**Register**” to finish without another authorization redirect.
+  **A single third-party account can belong to only one Raku account.** A WeChat / Google / GitHub identity already linked to one account cannot be used to register or link another account. The registration screen shows the same reminder: **if you already have an account, sign in directly** — reusing an old sign-in method to register a new account fails with an “already linked to another user” type of error.
 </Note>
 
-Click “**Have an account? Sign in**” on the registration screen to return to login.
+- Each sign-in method can be linked **at most once** per account (for example, you cannot link two Google accounts).
+- To add more sign-in methods to your current account, sign in and open **Account settings** (see below).
+- Ownership follows the authorized identity, so confirm you are using your own third-party account before linking.
+
+## Manage sign-in methods in Account settings
+
+After signing in, open the account menu in the top-right corner and go to **Account settings**, where you can:
+
+- **Link** — associate a Google / GitHub / WeChat identity that is not used by another account (linking goes through one third-party authorization redirect).
+- **Unlink** — remove a linked sign-in method.
+
+To keep you from locking yourself out, the app **does not let you unlink your last sign-in method** — an account must always keep at least one usable login (at least one third-party login; a passkey cannot be the only sign-in method).
+
+## Passkeys
+
+A passkey is a **passwordless** sign-in method: on the web version you can sign in with your device's **fingerprint, face scan, or security key**, with no third-party authorization step.
+
+The rules:
+
+- **Sign-in only — passkeys cannot register a new account.** A passkey only resolves to an account that **already exists**.
+- **Web version only** (the entry is not shown in the mobile / desktop apps).
+- Before first use, **sign in once with Google or GitHub**, then register a passkey under **Account settings → Passkeys**.
+- In Account settings you can **name / rename** passkeys, register more than one, and **delete** ones you no longer use.
+- If a passkey matches no known account, you are told to sign in with Google or GitHub first.
 
 ## Browse without an account
 
-At the bottom of the login screen there is a “**Browse without logging in**” button. Click it to enter the app as a **guest**: you can browse public corpus and view existing translations, explanations, and grammar cards, and play any audio that already exists.
+After choosing Login on the welcome screen, the login screen has a “**Continue without login**” button at the bottom. Tap it to enter the app as a **guest**: you can browse public corpus and view existing translations, explanations, and grammar cards, and play any audio that already exists.
 
 Guests **cannot** upload content, favorite articles or sentences, or add words to their vocabulary; these actions prompt you to log in.
 
