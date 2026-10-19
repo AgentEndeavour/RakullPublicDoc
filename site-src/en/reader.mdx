@@ -1,0 +1,82 @@
+---
+title: "Immersive Reading"
+description: "Read sentence by sentence in the three-pane reader, with translations, grammar explanations, notes, and audio."
+---
+
+Open any article in the library to enter the **immersive reader**.
+
+<Frame caption="The immersive reader: Japanese source / grammar explanation / Chinese translation">
+  <img src="/images/user-guide/07-reader.png" alt="Three-pane reader" />
+</Frame>
+
+The info area at the top shows the **analysis model** — it comes from the AI call that actually completed the translation and explanation for this article, not the model selected at upload time. Older articles with no call history show “no record”.
+
+## Read sentence by sentence
+
+On a wide screen the reader has three panes: **Japanese source / Grammar explanation / Chinese translation**. On a phone, each sentence is shown as a bilingual card. The source keeps its natural paragraph layout, but every sentence can be selected independently:
+
+- Click any sentence and it is highlighted in both the source and the translation, while the **grammar** pane updates with that sentence's explanation.
+- A sentence already in view is not force-centred; source and translation stay in sync per sentence and do not jump back to the paragraph start even when the panes differ in height.
+
+<Frame caption="After selecting a sentence, the grammar pane shows its grammar points">
+  <img src="/images/user-guide/08-reader-sentence.png" alt="Sentence-by-sentence reading" />
+</Frame>
+
+### Look up words
+
+Hovering a word shows a light highlight; the first click on a word in an unselected sentence only selects the whole sentence, and a second click on the word opens a **word card**. From the word card you can “**Add to vocabulary**”; the button then becomes “Added to vocabulary” in place, and clicking again removes it (see [Favorites and review](/user-guide/collections)).
+
+## The sentence study panel
+
+After selecting a sentence, the grammar pane organizes everything there is to learn about it:
+
+| Module | Contents |
+|---|---|
+| **Source** | The full sentence (selectable for copying), the **play button**, and **save this sentence** |
+| **Translation** | The sentence translation |
+| **Grammar** | The grammar explanation; keywords such as verb conjugations can be clicked to open the matching rule card |
+| **Note** | Write and save your own note |
+
+Click the **speaker** in the source module to hear the sentence read aloud. The bookmark in the top toolbar favorites the **whole article**, while “save this sentence” stores it as a sentence card.
+
+## Select and copy text
+
+On a computer you can drag to select text in the source or translation pane, across sentences and paragraphs, then press `Cmd+C` (macOS) / `Ctrl+C` (Windows). The two panes select independently without mixing languages. Copying the source includes only the text, without furigana or romaji.
+
+On a phone, long-press the source or translation of a sentence card, drag the handles to adjust the range, and then tap “Copy”. The range is limited to one language in the current card.
+
+## Grammar reference cards
+
+Both the grammar pane and the top toolbar have a **book** button that opens the unified **grammar library** (755 N5–N1 cards). You can also enter it directly from the “Grammar” tab. See [Grammar Cards](/user-guide/grammar) for details.
+
+## Play the whole article
+
+Click **Play all** at the top of the reader to read aloud in order, starting from the first sentence that already has audio. During playback you can pause, resume, or stop, and the current and total sentence counts are shown. Missing or failed audio is skipped automatically; the sentence being read gets a light highlight without changing your selected sentence.
+
+## Failed audio and retries
+
+When the text is processed successfully but some audio fails, the task shows “partially completed”, and existing translations, explanations, and successful audio can still be read normally. The reader distinguishes between no audio yet, failed generation, TTS not configured, and network errors: you can retry a single sentence or use “regenerate missing audio” in bulk.
+
+## Manage your articles
+
+If you uploaded the article (administrators can manage all articles), the reader offers extra actions:
+
+- **Edit**: change the title, content, etc.
+- **Reparse**: re-split and regenerate explanations.
+- **Make public / private**: toggle whether others can see it.
+- **Delete**: delete the article; this **cannot be undone**.
+- Within a sentence you can also **regenerate the explanation**.
+
+## On a phone
+
+The mobile reader turns each sentence into a rounded “Japanese + translation” card. Scroll up and down to read sentence by sentence; the top offers audio, bookmark, edit, and other actions too.
+
+<Frame caption="Mobile: sentence-by-sentence bilingual cards">
+  <img src="/images/user-guide/20-mobile-reader.png" alt="Mobile reader" />
+</Frame>
+
+## Next steps
+
+<Card title="Favorites and review" icon="bookmark" href="/user-guide/collections">
+  Favorite whole articles and organize sentences and words into reviewable cards.
+</Card>

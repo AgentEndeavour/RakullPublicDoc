@@ -1,0 +1,84 @@
+---
+title: "Grammar Cards"
+description: "Look up 755 N5–N1 grammar cards with categories, search, and single-card browsing."
+---
+
+The **Grammar** tab in the main navigation is a Japanese grammar reference library available to both logged-in users and guests. The cards are **static reference material**: they never call the AI again and do not track memorization progress.
+
+<Frame caption="The grammar library: categories on the left, the quick-lookup list on the right">
+  <img src="/images/user-guide/09-grammar-library.png" alt="Grammar card library" />
+</Frame>
+
+## Quick lookup
+
+By default you enter the **quick lookup** mode, which searches all 755 cards directly without first choosing a level.
+
+### Categories
+
+On desktop the left column offers three groups; on small screens the “filter categories” button opens the same choices:
+
+- **Function**: time and sequence, condition and hypothesis, cause and result, purpose and intention, contrast and concession, comparison and degree, limitation and emphasis, conjecture and hearsay, obligation and permission, requests and suggestions, and giving and receiving — 11 indexes in total.
+- **Rules and usage**: verb conjugation, adjective conjugation, particles, sentence structure, honorifics, quantities and counters, and demonstratives and expressive vocabulary — 7 indexes in total.
+- **Difficulty**: all levels or N5–N1.
+
+You can pick at most one item per group, and the three take the **intersection**. A single card can belong to several indexes, and results are deduplicated by stable ID.
+
+### Search
+
+Type a **pattern, fragment, or Chinese meaning** into the search box to filter:
+
+- The **＋** on the right adds another search box; multiple boxes mean “**contains all fragments at once, in any order**” — for example, enter 「は」 and 「です」 in separate boxes.
+- A single box also accepts space-separated fragments, such as 「こと ない」.
+- Search matches titles, aliases, short meanings, and summaries, and accepts full-/half-width, hiragana/katakana — for example, 「なきゃ」 finds 「なければならない」.
+
+<Tip>
+  This is not whole-sentence analysis: **take an expression fragment** out of the sentence to search. Entering a complete sentence is not guaranteed to be recognized.
+</Tip>
+
+Each row shows only the pattern, a short meaning of at most two lines, and an open arrow. Click the row (or press Enter while focused) to open the full explanation.
+
+## Card details
+
+Clicking a card opens a detail dialog in the center of the page and dims the background, without leaving your place.
+
+<Frame caption="Card details: meaning, connection, conjugation rules, and examples">
+  <img src="/images/user-guide/10-grammar-detail.png" alt="Grammar card detail" />
+</Frame>
+
+The details include:
+
+- The **level** and clickable **function/rule indexes** at the top — clicking an index shows every entry under it;
+- Core meaning and function, conjugation rules, connection conditions, exceptions and common mistakes, plus common collocations and examples;
+- The title stays fixed at the top, and longer content scrolls.
+
+## Single-card browsing
+
+Switch to **single-card browsing**, choose a level first (you can narrow it with categories), confirm the count, and then start browsing:
+
+- The focus page first shows only the pattern; click “expand explanation” to see the short meaning, and view the full explanation if needed.
+- Use previous/next or the left/right arrow keys to switch; with the card focused, Enter/Space expands it.
+- Each new card re-collapses so the next one is not revealed in advance; after exiting you return to the list position.
+
+## What's included
+
+There are **755 cards** in total:
+
+- **739** numbered cards from the 『蓝宝书大全集』 by level: N1 198, N2 152, N3 139, N4 130, N5 120;
+- The original **16** basic cards, assigned by rule to N5 (8) and N4 (8).
+
+So the per-level counts across the whole library are **N5 128, N4 138, N3 139, N2 152, N1 198**. These levels are organized by this book and its directly corresponding rules, not the official closed JLPT grammar list.
+
+<Note>
+  The 739 new cards are provided in **Simplified Chinese** first, with a Chinese-fallback notice in other interface languages. The original 16 basic cards support Simplified Chinese, Traditional Chinese, English, and Japanese.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Back to reading" icon="book-open" href="/user-guide/reader">
+    Pull up grammar cards any time during close reading.
+  </Card>
+  <Card title="Favorites and review" icon="bookmark" href="/user-guide/collections">
+    Organize sentences and words into reviewable cards.
+  </Card>
+</CardGroup>

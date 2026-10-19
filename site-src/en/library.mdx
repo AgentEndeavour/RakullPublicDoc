@@ -1,0 +1,79 @@
+---
+title: "Deep Reading: the bookshelf"
+description: "Manage your books and weekly recommendations on a bookshelf, create a book from plain text or an EPUB / PDF ebook, and study it page by page."
+---
+
+After logging in you land on **Deep Reading** by default. Your learning books live on a **bookshelf**: each book stands upright on a shelf and shows its title, author and learning progress. On desktop, **Weekly Recommendations** are shown on the right. Click a book to open it.
+
+<Frame caption="Deep Reading: the bookshelf + Weekly Recommendations (desktop)">
+  <img src="/images/user-guide/04-library.png" alt="Bookshelf main screen" />
+</Frame>
+
+## Bookshelf and filter
+
+- Each book spine shows the **title, author and learning progress** (processed pages / total pages).
+- A page being processed shows its live progress percentage.
+- The **genre tabs** at the top filter the books already loaded.
+- Pull to refresh or click **refresh** to reload the bookshelf.
+
+On a phone, tap the already-selected **Deep Reading** item in the bottom navigation to switch between **Bookshelf / Weekly Recommendations** from the pop-up menu. On desktop both are always shown side by side.
+
+## Create a book
+
+Click the **Upload** button to open the **Create book** wizard. Fill in the book details first, then choose the content type.
+
+<Steps>
+  <Step title="Enter the book details">
+    Set the title (required), author (optional), genre and translation type. **Lite translation** uses machine translation without a model summary or grammar explanations; you can select a translation backend. **LLM polish** offers explanation mode, level (N5–N1, default N3) and model options. Both types support an output language (default Simplified Chinese).
+  </Step>
+  <Step title="Choose the content type">
+    Choose **Plain text** (paste Japanese text directly) or **Ebook** (upload a `.epub`, `.pdf` or `.txt` file).
+  </Step>
+  <Step title="Automatic pagination">
+    The content is paginated by paragraph: **each page holds at most 300 Japanese words**, ending at a paragraph/sentence boundary when possible.
+  </Step>
+  <Step title="Start learning">
+    Page 1 is processed immediately after creation, and the book opens automatically. Later pages use the same translation type and backend selected at creation; lite translation does not generate grammar explanations.
+  </Step>
+</Steps>
+
+<Frame caption="The Create book wizard">
+  <img src="/images/user-guide/06-upload-form.png" alt="Create book form" />
+</Frame>
+
+<Note>
+  The original ebook file is **never stored**: the app extracts the text temporarily at upload time, saves only the paginated plain text, and discards the original file once extraction finishes.
+</Note>
+
+<Tip>
+  The three genres are split differently: **Article / Interview** are split on sentence-ending punctuation, while **Lyrics** are split line by line, so separate each lyric line with a line break. Scanned / image-only PDFs cannot be extracted and are not supported.
+</Tip>
+
+## Reading a book: the two-page spread
+
+Opening a book shows a **two-page spread** like a real book:
+
+- The **left page is the current page** (processed), showing the chapter title and a text preview. Click it to enter immersive reading (sentence-by-sentence translation, grammar explanations and audio).
+- The **right page is the next page** (not yet translated), shown as an “untranslated” placeholder. Click it and confirm to start processing that page; once done, the cursor moves forward and the spread turns to the new left/right pages.
+- You can page back to pages you have already studied; pages beyond the current unprocessed page cannot be jumped to.
+- After every page is processed, the right page shows **Finished**.
+
+## On a phone
+
+On mobile, a bottom navigation bar switches between the five features, and Deep Reading supports filtering, book creation and the two-page spread as well.
+
+<Frame caption="Mobile: the bookshelf and bottom navigation">
+  <img src="/images/user-guide/19-mobile-library.png" alt="Mobile bookshelf" />
+</Frame>
+
+## Next steps
+
+<Card title="Immersive Reading" icon="book-open" href="/user-guide/reader">
+  Open the current page and start reading sentence by sentence.
+</Card>
+
+## Cancel page processing
+
+A page can be cancelled while queued or processing with **Cancel processing** in the progress area. Only the task owner and root can cancel.
+
+After confirmation, the button shows **Cancelling…** while waiting for the server's final state. Generated text, explanations and sentence audio are preserved; a page that failed stays in the failed state and can be retried later by tapping it again. An upload session that has not been submitted for processing expires after two minutes without activity and its temporary files are cleaned up. Deleting a book also removes the page content it has already generated.

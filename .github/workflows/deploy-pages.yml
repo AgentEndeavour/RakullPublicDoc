@@ -1,0 +1,95 @@
+name: deploy-pages
+
+# Builds the public user guide with Docusaurus and publishes it to GitHub
+# Pages at ../../RakullPublicDoc/.
+#
+# In the RakullApp monorepo this file is inert (it lives under
+# docs/user-guide/.github/workflows, not the repo-root .github/workflows). The
+# mirror-sync job publishes the docs/user-guide subtree to the root of
+# AgentEndeavour/RakullPublicDoc, where this becomes an active workflow.
+#
+# The mirror root holds the eight Chinese *.mdx pages plus this site scaffold.
+# Before building, the job assembles Docusaurus's expected layout: the zh
+# pages move into ./docs and the English pages + screenshots (vendored
+# byte-identically under site-src/ in the monorepo, because the source repos
+# are private) are copied into i18n/ and static/.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Avoid overlapping deploys.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout RakullPublicDoc (mirror root = docs/user-guide subtree)
+        uses: actions/checkout@v4
+
+      # Enables Pages with "GitHub Actions" as the source on first run.
+      - name: Enable GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Assemble site content
+        run: |
+          set -euo pipefail
+          mkdir -p docs i18n/en/docusaurus-plugin-content-docs/current static/images
+          # The eight shared zh pages live at the mirror root.
+          mv ./*.mdx docs/
+          # English pages + screenshots, vendored byte-identically in the
+          # monorepo at docs/user-guide/site-src (private source repos cannot
+          # be fetched from this public mirror).
+          cp site-src/en/*.mdx i18n/en/docusaurus-plugin-content-docs/current/
+          cp -R site-src/images/user-guide static/images/user-guide
+
+      - name: Install dependencies
+        run: |
+          # npm 10 on the runner can crash with "Exit handler never called!"
+          # while still exiting 0, silently leaving an incomplete install;
+          # use a current npm and assert the CLI binary actually exists.
+          npm install -g npm@latest
+          npm ci --no-audit --no-fund
+          test -x node_modules/.bin/docusaurus
+
+      # One build emits every configured locale (zh + en).
+      - name: Build
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify live site
+        run: |
+          set -euo pipefail
+          base="${{ steps.deployment.outputs.page_url }}"
+          for path in "" "user-guide/getting-started/" "en/user-guide/getting-started/"; do
+            curl -fS --retry 8 --retry-delay 5 -o /dev/null "${base}${path}"
+          done

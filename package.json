@@ -1,0 +1,26 @@
+{
+  "name": "rakull-public-doc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Raku user guide, published to GitHub Pages from the RakullPublicDoc mirror.",
+  "engines": {
+    "node": ">=18.0"
+  },
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.7.0",
+    "@docusaurus/preset-classic": "^3.7.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+# Docusaurus build output (assembled + installed only in CI / local preview).
+node_modules/
+build/
+.docusaurus/
+.cache-loader/
+
+# The deploy workflow assembles these from the mirror-root mdx files and the
+# vendored site-src copies; never commit them in the monorepo.
+docs/
+i18n/
+static/images/
+.rakulldoc/
