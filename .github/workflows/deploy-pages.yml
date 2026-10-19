@@ -38,6 +38,8 @@ jobs:
       # Enables Pages with "GitHub Actions" as the source on first run.
       - name: Enable GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Setup Node
         uses: actions/setup-node@v4
