@@ -77,3 +77,17 @@ On mobile, a bottom navigation bar switches between the five features, and Deep 
 A page can be cancelled while queued or processing with **Cancel processing** in the progress area. Only the task owner and root can cancel.
 
 After confirmation, the button shows **Cancelling…** while waiting for the server's final state. Generated text, explanations and sentence audio are preserved; a page that failed stays in the failed state and can be retried later by tapping it again. An upload session that has not been submitted for processing expires after two minutes without activity and its temporary files are cleaned up. Deleting a book also removes the page content it has already generated.
+
+## Choose a book cover
+
+The first creation step selects a random cover. You can choose charcoal leather, graphite parchment, brown leather, or warm parchment, with a live preview of the title and author. The choice survives moving between steps and retrying creation.
+
+Both plain text and e-book uploads support cover selection. After creation, the home shelf uses the saved cover across refreshes and devices. Older books without a saved cover receive a stable cover based on their book ID.
+
+<Frame caption="Choose a generated cover (sample data)">
+  <img src="/images/user-guide/book-cover-selection.png" alt="Four book covers with a selected parchment cover" />
+</Frame>
+
+<Frame caption="Saved covers on the shelf (sample data)">
+  <img src="/images/user-guide/book-cover-shelf.png" alt="Bookshelf with saved covers and management controls" />
+</Frame>
