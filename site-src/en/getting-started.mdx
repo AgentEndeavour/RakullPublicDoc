@@ -75,6 +75,8 @@ After signing in, open the account menu in the top-right corner and go to **Acco
 - **Link** — associate a Google / GitHub / WeChat identity that is not used by another account (linking goes through one third-party authorization redirect).
 - **Unlink** — remove a linked sign-in method.
 
+Complete authorization and wait for Raku’s linking confirmation. A successful OAuth authorization alone does not confirm a saved Raku binding: check **Account → Account & security** for the provider’s **Unlink** action. Accounts with both Google and GitHub identities can link and sign in with either provider, regardless of which was used first.
+
 When the sign-in linking block appears during onboarding, each successful authorization returns to the same block with a compact, single-line green confirmation strip and a check-circle icon. The banner names the linked sign-in provider (for example, “GitHub linked”) and shows that provider account’s email when available. You can link another available provider there. The block also points to **Account → Account & security**, where you can manage and unlink sign-in methods later. The invite-code step appears after you dismiss the block; after the last provider is linked, close the success message to continue.
 
 To keep you from locking yourself out, the app **does not let you unlink your last sign-in method** — an account must always keep at least one usable login (at least one third-party login; a passkey cannot be the only sign-in method).
