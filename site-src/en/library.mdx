@@ -54,7 +54,7 @@ Click the **Upload** button to open the **Create book** wizard. Fill in the book
 </Frame>
 
 <Note>
-  The original ebook file is **never stored**: the app extracts the text temporarily at upload time, saves only the paginated plain text, and discards the original file once extraction finishes.
+  The bookshelf stores paginated text. Original ebooks are retained temporarily for verification, extraction and recovery, then cleaned up after their retention period. They are not kept as permanent downloadable bookshelf files.
 </Note>
 
 <Tip>
@@ -83,6 +83,14 @@ On mobile, a bottom navigation bar switches between the five features, and Deep 
 <Card title="Immersive Reading" icon="book-open" href="/user-guide/reader">
   Open the current page and start reading sentence by sentence.
 </Card>
+
+## Recoverable uploads (internal preview)
+
+Preview versions show upload, preparation, fee confirmation and processing progress. Confirming the fee after preparation creates the book and processes its first page. Quotes reuse the uploaded source, so the file does not need to be uploaded again.
+
+Accepted tasks continue after leaving the page or losing the network. Reopen Create book to restore the session. After a browser refresh, reselect the original file if requested; the app verifies its identity before resuming. Retries keep the same request to avoid duplicate books. Signing out isolates your recovery records from other accounts.
+
+A connection problem does not mark background work as failed. Reconnect to check its state. If the task requires attention or reconciliation, keep its task ID and contact support before creating another import.
 
 ## Cancel page processing
 
