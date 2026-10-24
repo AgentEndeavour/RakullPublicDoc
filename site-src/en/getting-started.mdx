@@ -77,7 +77,9 @@ After signing in, open the account menu in the top-right corner and go to **Acco
 
 Complete authorization and wait for Raku’s linking confirmation. A successful OAuth authorization alone does not confirm a saved Raku binding: check **Account → Account & security** for the provider’s **Unlink** action. Accounts with both Google and GitHub identities can link and sign in with either provider, regardless of which was used first.
 
-When the sign-in linking block appears during onboarding, each successful authorization returns to the same block with a compact, single-line green confirmation strip and a check-circle icon. The banner names the linked sign-in provider (for example, “GitHub linked”) and shows that provider account’s email when available. You can link another available provider there. The block also points to **Account → Account & security**, where you can manage and unlink sign-in methods later. The invite-code step appears after you dismiss the block; after the last provider is linked, close the success message to continue.
+When the “Set up sign-in methods” block appears during onboarding, each successful authorization returns to the same block with a compact, single-line green confirmation strip and a check-circle icon. The banner names the linked sign-in provider (for example, “GitHub linked”) and shows that provider account’s email when available. You can link another available provider there. The block also points to **Account → Account & security**, where you can manage and unlink sign-in methods later. The invite-code step appears after you dismiss the block; after the last provider is linked, passkey creation remains available when eligible. Close the block to continue.
+
+On supported platforms, after signing in with Google or GitHub, the same block also offers **Passkeys → Create**. Click it to open the system creation sheet and use your fingerprint, face, or device unlock on your next sign-in. The sheet never opens automatically. Success shows a green banner directly below the “Set up sign-in methods” title and replaces the action with a checkmark and “Set up”; cancellation leaves you free to retry or choose “Maybe later”. Existing passkeys show “Set up”, and users who already completed onboarding are not prompted again.
 
 To keep you from locking yourself out, the app **does not let you unlink your last sign-in method** — an account must always keep at least one usable login (at least one third-party login; a passkey cannot be the only sign-in method).
 
@@ -89,7 +91,8 @@ Rules:
 
 - **Sign-in only — passkeys cannot register a new account.** A passkey only resolves to an account that **already exists**.
 - **Available on the web, the Android app, and the Windows app**; the entry is hidden in the native iOS / macOS apps (passkeys still work there when you open Raku in a browser).
-- Before first use, **sign in once with Google or GitHub**, then register a passkey under **Account settings → Passkeys**.
+- Before first use, **sign in once with Google or GitHub**, then create a passkey during onboarding or later under **Account settings → Passkeys**.
+- Your system or chosen credential manager stores the passkey and may sync it to other devices; storage is not guaranteed to stay on this device alone.
 - In Account settings you can **name / rename** passkeys, register more than one, and **delete** ones you no longer use.
 - If a passkey matches no known account, you are told to sign in with Google or GitHub first.
 
