@@ -42,10 +42,10 @@ Click the **Upload** button to open the **Create book** wizard. Fill in the book
     Choose **Plain text** (paste Japanese text directly) or **Ebook** (upload a `.epub`, `.pdf` or `.txt` file).
   </Step>
   <Step title="Automatic pagination">
-    The content is paginated by paragraph: **each page holds at most 300 Japanese words**, ending at a paragraph/sentence boundary when possible.
+    The content is paginated by paragraph: **each page holds at most 300 characters (including punctuation, excluding whitespace)**, ending at a paragraph/sentence boundary when possible.
   </Step>
   <Step title="Start learning">
-    After upload and pagination, the book opens in an original-text preview without automatically processing any page. Click page 1 and confirm to start normal processing. Every page uses the translation type and backend selected at creation; lite translation does not generate grammar explanations.
+    After upload and pagination, the book opens in an original-text preview without automatically processing any page. Select any page, click its processing button and confirm the charge to start processing. Every page uses the translation type and backend selected at creation; lite translation does not generate grammar explanations.
   </Step>
 </Steps>
 
@@ -65,14 +65,12 @@ The creation dialog estimates the entire content, showing its total page count, 
   The three genres are split differently: **Article / Interview** are split on sentence-ending punctuation, while **Lyrics** are split line by line, so separate each lyric line with a line break. Scanned / image-only PDFs cannot be extracted and are not supported.
 </Tip>
 
-## Reading a book: the two-page spread
+## Reading books: quick view
 
-Opening a book shows a **two-page spread** like a real book:
-
-- The **left page is the current page**, showing the chapter title and a text preview. In a new book, page 1 is pending: click it and confirm to start processing. Click a processed page to enter immersive reading (sentence-by-sentence translation, grammar explanations and audio).
-- The **right page is the next page** (not yet translated), shown as an “untranslated” placeholder. Click it and confirm to start processing that page; once done, the cursor moves forward and the spread turns to the new left/right pages.
-- You can page back to pages you have already studied; pages beyond the current unprocessed page cannot be jumped to.
-- After every page is processed, the right page shows **Finished**.
+- Browse the original text of any page without processing it first. Turn through the whole book or tap the page number at the bottom to select a page directly.
+- Every unprocessed page has the same status and **Tap to start processing** button. Select any page; earlier pages do not need to be processed. Processing starts after confirming the charge.
+- Open processed pages for close reading, translations, explanations and audio. Completing processing keeps the selected spread visible.
+- On phones, swipe between the two pages. Existing long pages keep their page numbers and results, with readable, scrollable text.
 
 ## Play with Raku while waiting
 
