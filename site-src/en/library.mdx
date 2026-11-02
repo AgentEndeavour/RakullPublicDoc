@@ -42,10 +42,14 @@ Click the **Upload** button to open the **Create book** wizard. Fill in the book
     Choose **Plain text** (paste Japanese text directly) or **Ebook** (upload a `.epub`, `.pdf` or `.txt` file).
   </Step>
   <Step title="Automatic pagination">
-    The content is paginated by paragraph: **each page holds at most 300 characters (including punctuation, excluding whitespace)**, ending at a paragraph/sentence boundary when possible.
+    Choose **Simple / Standard / Advanced** analysis. Their default page caps are **300 / 500 / 800 characters**. Automatic mode uses a completed, non-degraded ability assessment, preferring its grammar dimension; unknown ability defaults to Standard.
+
+    You can choose a maximum page length (100–1000 characters) on the upload screen. Changing difficulty preserves a manual cap. Counts use source Unicode characters, including punctuation and whitespace, rather than Japanese words or model tokens. Paragraph and sentence endings are preferred; an oversized sentence is split.
   </Step>
   <Step title="Start learning">
     After upload and pagination, the book opens in an original-text preview without automatically processing any page. Select any page, click its processing button and confirm the charge to start processing. Choose the model, translation, explanations and output language on the dedicated parsing settings page for each page.
+
+    **Simple** briefly explains more grammar; **Advanced** focuses on fewer difficult points. Pages keep the upload policy snapshot when parsed later, including retries.
   </Step>
 </Steps>
 
