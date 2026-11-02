@@ -118,6 +118,21 @@ On mobile, a bottom navigation bar switches between the five features, and Deep 
   Open the current page and start reading sentence by sentence.
 </Card>
 
+
+## Process multiple book pages continuously
+
+Enable **Process book pages continuously** during upload to open **Batch parsing settings** immediately after pagination. Browse original pages and use the same model, translation, explanation, language and self-check controls as single-page parsing. Confirm to create a background queue that processes this book’s pending pages in page order. Without this option, upload opens the original preview as usual. The preview’s **Batch process** action can process the current page and all later pending pages at any time.
+
+**Each user can process only one book at a time.** The confirmed queue holds the processing slot until it finishes or is stopped. Each completed page becomes readable immediately while later pages continue, including after leaving preview, entering the reader or closing the browser. The preview’s **Task queue** action has a black badge counting pending and active pages. Open it to inspect page statuses and errors or read completed pages. It also includes ordinary single-page tasks and pages that have not been queued.
+
+Estimates use current allowances. Creating a queue does not reserve payment for every page; each page checks its confirmed quote when it starts. Insufficient balance or changed allowances/funding pause the queue without switching automatically to wallet payment. Ordinary page failures are recorded and later pages continue. Cancel one task from its row or all tasks from the queue footer. The processing slot remains occupied until the server confirms execution has ended. Batch processing skips completed pages; use the dedicated row action to reparse a completed page. Confirm estimates within 10 minutes. Per-page queue quotes remain valid for up to 7 days and require review after expiry.
+
+Deployment requires the durable processing schema, corresponding workers and the page-processing V2 gate. Environments without these do not accept queue requests.
+
+Active pages show a progress bar: valid worker counts display the current phase percentage and completed/total count. Without valid counts, an indeterminate bar indicates activity without inventing a percentage. Queued, failed and completed pages do not show an active progress bar.
+
+Click any page entry to open live task details with status, phase progress, errors and the original page; readable results have a reading action in details. Completed pages show only **Reparse page**. Waiting pages have no row actions. Active task actions remain on the right. These buttons do not open task details. Cancellation waits for the server’s final state and shows “Stopping” while execution winds down. Reparse opens settings and cost review, then waits for the old task to stop safely before starting. Completed results remain available until a successful replacement is published; cancellation or failure preserves them. **Cancel all remaining tasks** at the bottom cancels waiting pages and requests cancellation of current execution. A page already committing its final result may finish saving first. Each user still processes only one book at a time.
+
 ## Recoverable uploads (internal preview)
 
 Preview versions show upload, preparation, fee confirmation and processing progress. Confirming the fee after preparation creates the book and processes its first page. Quotes reuse the uploaded source, so the file does not need to be uploaded again.
