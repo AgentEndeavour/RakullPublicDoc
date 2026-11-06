@@ -131,3 +131,13 @@ Each domain has only a small sample. The model and item difficulties have not be
 Personal ability displays issued learning certificates as full artwork. Select **View certificate** for a zoomable full-screen preview, or **Save certificate** to export a high-resolution PNG. Each includes the account name, achievement, issue date and certificate number as an in-app learning record.
 
 Reparse opens settings with reading self-checks off by default. With checks off, translations and explanations remain visible and no completed assessment is required. Enabling checks requires a completed ability assessment. Each check shows a specific question before its reference answer is revealed; ordinary explanations without a question are never hidden as a self-check. Spoiler particles drift continuously unless the system requests reduced motion.
+
+## Adjust characters per page later
+
+Choose **Adjust pagination** at the top of the book spread or in the close-reading menu. Enter a target of 1–10000 characters per page, choose **Preview pagination** to review the new total page count, then **Apply pagination**.
+
+Pages reflow in whole sentences. Lower targets move trailing sentences forward; higher targets can combine adjacent content. Punctuation counts and whitespace does not. An oversized sentence occupies its own page without being cut. Chapter boundaries, parsed/unparsed boundaries, and differences in parsing settings or explanation context remain separate.
+
+Saved translations, explanations, furigana, audio and private notes travel with their sentences without another AI call. The book refreshes after applying. When invoked from close reading, the reader reopens the page containing the previously selected sentence. Existing favorites, vocabulary sources and feedback still resolve to retained original records; notes on the new pages and original records are saved independently.
+
+Wait for processing to finish before reflowing. Content changes after preview require a fresh preview. Pages whose source no longer matches their stored sentences are rejected to avoid losing text. A failed save rolls back the entire change.
