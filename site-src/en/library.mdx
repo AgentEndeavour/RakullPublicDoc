@@ -135,6 +135,10 @@ Click any page entry to open live task details with status, phase progress, erro
 
 ## Recoverable uploads (internal preview)
 
+When an upload enters the server queue, it shows “Queued, currently number N”. The position updates as tasks are claimed and scheduling priorities change; execution replaces it with the current processing stage. If the server cannot determine a reliable position, the app only shows “Queued”. Waiting no longer displays a seconds-since-progress warning. Connection problems and processing failures are still reported.
+
+The position is a snapshot of the currently eligible queue, not a waiting-time estimate. When processing engines compete for the same execution slot, a retry is pending, or execution is not yet eligible, only the queue label may be available.
+
 Preview versions show upload, preparation, fee confirmation and processing progress. Confirming the fee after preparation creates the book and processes its first page. Quotes reuse the uploaded source, so the file does not need to be uploaded again.
 
 Accepted tasks continue after leaving the page or losing the network. Reopen Create book to restore the session. After a browser refresh, reselect the original file if requested; the app verifies its identity before resuming. Retries keep the same request to avoid duplicate books. Signing out isolates your recovery records from other accounts.
