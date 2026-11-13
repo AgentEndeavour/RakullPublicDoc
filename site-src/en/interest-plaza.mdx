@@ -51,29 +51,34 @@ The group goes live only after a site administrator approves it. If your applica
 
 The **Official weekly history** block at the top of the plaza shows the full history of weekly picks (both currently featured and removed ones) in a horizontal row. Tap a card to open the article.
 
-## Group detail
+## Group details and recommendations
 
-Tap any group card to open its detail page. The header shows the description, interest tags, member count, and join or manage actions. **Invite members** opens the share code for viewing and copying. The organizers section lists owners and admins; **Recommended reading** lists approved articles with their authors:
+Group details and home **Interest picks** share two content cards:
 
-- **Members**: tap a title to read the article.
-- **Non-members**: titles are locked until you join the group.
+- **Excerpt**: the selected original text, its translation and a recommendation note.
+- **Grammar**: the grammar form, full explanation and examples, with associated original text and translation where applicable.
 
-## Managing your groups
+Book/article titles and page numbers are attribution metadata. Recommendations do not display whole books or grant access to the source or its other pages.
 
-Choose "Manage my groups" on the plaza and pick a group you belong to open its management page. Members can apply to become an admin. Owners and admins can:
+### Recommend an excerpt or grammar
 
-- View, copy, or **regenerate the invite code** (the group's share code — after regenerating, the previous code stops working immediately); share it with friends so they can join directly
-- Switch the group between **public and private** at any time (private hides it from the plaza; members only)
-- Review **join requests** (only public groups accept requests; private groups are joinable by share code only)
-- Run the **first-stage review** of articles recommended by members
-- **Recommend an article** to the group
-- **Remove members** (only an Owner can remove an admin)
+Choose **Choose an excerpt or grammar** in the group reading section. Select a continuous saved sentence range from your own processed content, a grammar occurrence from a single sentence, or a public grammar card. The reader offers the same recommendation menu for your selected sentence and its matched grammar. Grammar browsing and detail views also provide the shared entry. Personal entitlement to protected reference material does not make it publicly shareable across groups.
 
-Owners can additionally approve **admin promotion requests** or **dissolve the group**. Regular members can **leave** the group.
+The server builds a complete preview before submission. Choose a group, optionally add a note, and submit for group review followed by site review. **Both reviewers see the complete content, note, attribution and expandable bilingual context—the same immutable snapshot that members will read.**
 
-> Group articles go through two stages — group first-stage review, then a site administrator's final review. Once approved they are visible to members only and the article's original visibility is unchanged.
+Expand **Context: original and translation** to view the related saved paragraphs. Context is limited to the recommendation, rather than copying an entire book. Reparsing or editing the original never silently changes an approved snapshot. If source content changes after preview, refresh the preview before submitting; a new version needs review. Deleting the source does not erase a published snapshot or grant access to deleted source content.
 
-Below "Weekly recommendations" on the home page, the **My interest groups** panel aggregates approved articles from your groups and labels each with its source group.
+Legacy article recommendations are retained as history and are never automatically converted into excerpts. The new recommendation feed shows only excerpts and grammar.
+
+## Managing your group
+
+Group details show direct destinations and pending counts. **Manage my groups** on the plaza opens the same destinations.
+
+- **Recommendation review**: owners/admins see group review, site review and reviewed entries. Inspect the original, translation and context before sending an item to site review. Regular members see only their own submissions.
+- **Members**: handle join requests and view members; owners additionally handle admin requests. Regular members can leave.
+- **Group settings**: manage visibility and invitation codes. Only the owner can confirm dissolution.
+
+> The site console lists recommendations that have passed group review. Leaving, removal or dissolution removes that group's grant to the recommendation snapshots.
 
 ## Next steps
 
@@ -86,6 +91,8 @@ Below "Weekly recommendations" on the home page, the **My interest groups** pane
   </Card>
 </CardGroup>
 
-## Recommend your own articles
+## Members and large groups
 
-Choose **Recommend to this group** in the reading section of the group detail page, without entering management. Only your articles that are ready to read appear. Manage your uploads separately through **My articles** in the corpus area. Select an article, optionally enter a recommendation note, and submit for group and site review. Group settings and reviews handles visibility, membership, and review tasks.
+The common header keeps the title, introduction, tags, and invitation actions visible across content changes. Liquid Glass tabs sit below this header and switch only recommendations, members, and management. The member tab shows the group size directly. Only members can open the full directory; visitors see a join prompt.
+
+The directory uses server-side cursor pagination with 25 people per request, role filters, and exact member-ID lookup. Only the current page is fetched, name-resolved, and rendered. Returning to the directory preserves its current query. Management also uses tabs for overview, review, members, and settings.
